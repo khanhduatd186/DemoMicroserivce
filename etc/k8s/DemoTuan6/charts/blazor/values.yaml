@@ -1,0 +1,18 @@
+config:
+  selfUrl: # https://blazor.demotuan6.dev
+  gatewayUrl: # https://gateway-web.demotuan6.dev
+  authServer:
+      authority: # https://demotuan6-st-authserver
+      responseType: "code"
+  AbpLicenseCode: #
+
+ingress:
+  host: # blazor.demotuan6.dev
+  tlsSecret: demotuan6-tls
+
+image:
+  repository: mycompanyname/demotuan6-app-blazor
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

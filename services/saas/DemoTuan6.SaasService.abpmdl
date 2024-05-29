@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "DemoTuan6.SaasService.HttpApi": {
+      "path": "src/DemoTuan6.SaasService.HttpApi/DemoTuan6.SaasService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.Application.Contracts": {
+      "path": "src/DemoTuan6.SaasService.Application.Contracts/DemoTuan6.SaasService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.Application": {
+      "path": "src/DemoTuan6.SaasService.Application/DemoTuan6.SaasService.Application.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.Domain.Shared": {
+      "path": "src/DemoTuan6.SaasService.Domain.Shared/DemoTuan6.SaasService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.Domain": {
+      "path": "src/DemoTuan6.SaasService.Domain/DemoTuan6.SaasService.Domain.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.EntityFrameworkCore": {
+      "path": "src/DemoTuan6.SaasService.EntityFrameworkCore/DemoTuan6.SaasService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.HttpApi.Client": {
+      "path": "src/DemoTuan6.SaasService.HttpApi.Client/DemoTuan6.SaasService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.HttpApi.Host": {
+      "path": "src/DemoTuan6.SaasService.HttpApi.Host/DemoTuan6.SaasService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.SaasService.TestBase": {
+      "path": "test/DemoTuan6.SaasService.TestBase/DemoTuan6.SaasService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.SaasService.Domain.Tests": {
+      "path": "test/DemoTuan6.SaasService.Domain.Tests/DemoTuan6.SaasService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.SaasService.EntityFrameworkCore.Tests": {
+      "path": "test/DemoTuan6.SaasService.EntityFrameworkCore.Tests/DemoTuan6.SaasService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.MicroserviceName.Application.Tests": {
+      "path": "test/DemoTuan6.SaasService.Application.Tests/DemoTuan6.SaasService.Application.Tests.abppkg",
+      "folder": "test"
+    }
+  }
+}

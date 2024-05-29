@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DemoTuan6.IdentityService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DemoTuan6.IdentityService.Domain\DemoTuan6.IdentityService.Domain.csproj" />
+    <ProjectReference Include="..\DemoTuan6.IdentityService.TestBase\DemoTuan6.IdentityService.TestBase.csproj" />
+  </ItemGroup>
+
+
+</Project>

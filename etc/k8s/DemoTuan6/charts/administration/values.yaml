@@ -1,0 +1,37 @@
+config:
+  selfUrl: # https://administration.demotuan6.dev
+  corsOrigins: #
+  connectionStrings:
+    administrationService: #
+    saasService: #
+  authServer:
+    authority: # http://demotuan6-st-authserver
+    requireHttpsMetadata: "false"
+    metadataAddress: # http://admin.demotuan6.dev/.well-known/openid-configuration
+    swaggerClientId: WebGateway_Swagger
+  remoteServices:
+    abpIdentityBaseUrl: #
+    useCurrentToken: "false"
+  dotnetEnv: #
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+  AbpLicenseCode: #
+
+synchedCommunication:
+  authority: # https://admin.demotuan6.dev
+  requireHttps: #
+  validateIssuerName: #
+  validateEndpoints: #
+
+ingress:
+  host: # demotuan6-st-administration
+  tlsSecret: demotuan6-tls
+
+image:
+  repository: mycompanyname/demotuan6-service-administration
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

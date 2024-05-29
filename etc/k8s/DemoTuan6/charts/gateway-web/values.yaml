@@ -1,0 +1,36 @@
+config:
+  selfUrl: # https://gateway-web.demotuan6.dev
+  corsOrigins: # https://demotuan6-st-angular
+  globalConfigurationBaseUrl: # http://demotuan6-st-gateway-web
+  authServer:
+    authority: # http://demotuan6-st-authserver
+    requireHttpsMetadata: # "false"
+    metadataAddress: # https://authserver.demotuan6.dev/.well-known/openid-configuration
+    swaggerClientId: # WebGateway_Swagger
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  AbpLicenseCode: #
+  
+reRoutes:
+  accountService:
+    url: http://demotuan6-st-authserver
+  saasService:
+    url: http://saas-st-administration
+  administrationService:
+    url: http://demotuan6-st-administration
+  identityService:
+    url: http://demotuan6-st-identity
+  productService:
+    url: http://demotuan6-st-product
+ingress:
+  host: # gateway-web.demotuan6.dev
+  tlsSecret: demotuan6-tls
+
+image:
+  repository: mycompanyname/demotuan6-gateway-web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

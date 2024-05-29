@@ -1,0 +1,25 @@
+config:
+  selfUrl: # https://web.demotuan6.dev
+  gatewayUrl: # http://demotuan6-st-gateway-web
+  authServer:
+    authority: # https://authserver.demotuan6.dev
+    requireHttpsMetadata: # "false"
+    isOnK8s: # "true"
+    metaAddress: # http://demotuan6-st-authserver
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+  AbpLicenseCode: #
+
+ingress:
+  host: # web.demotuan6.dev
+  tlsSecret: demotuan6-tls
+
+image:
+  repository: mycompanyname/demotuan6-app-web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

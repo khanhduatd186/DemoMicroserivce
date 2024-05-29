@@ -1,0 +1,21 @@
+config:
+  selfUrl: # https://angular.demotuan6.dev
+  gatewayUrl: # https://gateway-web.demotuan6.dev
+  authServer:
+      authority: # https://authserver.demotuan6.dev
+      requireHttpsMetadata: # false
+      responseType: "code"
+      strictDiscoveryDocumentValidation: false
+      skipIssuerCheck: true
+  AbpLicenseCode: #
+
+ingress:
+  host: # angular.demotuan6.dev
+  tlsSecret: demotuan6-tls
+
+image:
+  repository: mycompanyname/demotuan6-app-angular
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

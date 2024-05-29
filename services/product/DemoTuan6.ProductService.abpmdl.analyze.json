@@ -1,0 +1,169 @@
+{
+  "folders": {
+    "src": {},
+    "test": {}
+  },
+  "packages": {
+    "DemoTuan6.ProductService.Domain.Shared": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.Domain.Shared/DemoTuan6.ProductService.Domain.Shared.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.domain.shared": {}
+      }      
+    },
+    "DemoTuan6.ProductService.Domain": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.Domain/DemoTuan6.ProductService.Domain.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.domain": {}
+      },
+      "contents": {
+        "aggregates": {
+          "DemoTuan6.ProductService.Products.Product": {
+            "keyType": "Guid",
+            "summary": "Represents a product.",
+            "collectionProperties": {},
+            "navigationProperties": {}
+          } 
+        },
+        "repositoryInterfaces": {
+          "DemoTuan6.ProductService.Products.IProductRepository": {
+            "entity": {
+              "type": "DemoTuan6.ProductService.Products.Product",
+              "package": "DemoTuan6.ProductService.Domain"
+            }
+          }
+        }
+      }
+    },
+    "DemoTuan6.ProductService.Application.Contracts": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.Application.Contracts/DemoTuan6.ProductService.Application.Contracts.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.application.contracts": {}
+      }
+    },
+    "DemoTuan6.ProductService.Application": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.Application/DemoTuan6.ProductService.Application.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.application": {}
+      },
+      "contents": {
+        "applicationServices": {
+          "DemoTuan6.ProductService.ProductAppService": {}
+        }
+      }
+    },
+    "DemoTuan6.ProductService.EntityFrameworkCore": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.EntityFrameworkCore/DemoTuan6.ProductService.EntityFrameworkCore.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ef": {}
+      },
+      "contents": {
+        "efDbContexts": {
+          "DemoTuan6.ProductService.EntityFrameworkCore.ProductServiceDbContext": {
+            "entities": {
+              "DemoTuan6.ProductService.Products.Product": {
+                "package": "DemoTuan6.ProductService.Domain",
+                "dbSetPropertyOnDbContext": "Products",
+                "databaseTable": "Products" 
+              }
+            }
+          }
+        }
+      }
+    },
+    "DemoTuan6.ProductService.HttpApi": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.HttpApi/DemoTuan6.ProductService.HttpApi.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.http-api": {}
+      },
+      "contents": {
+        "controllers": {
+          "DemoTuan6.ProductService.Products.ProductController": {},
+          "DemoTuan6.ProductService.Products.ProductPublicController": {}
+        }
+      }
+    },
+    "DemoTuan6.ProductService.HttpApi.Client": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.HttpApi.Client/DemoTuan6.ProductService.HttpApi.Client.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.http-api-client": {}
+      }
+    },
+    "DemoTuan6.ProductService.Web": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.Web/DemoTuan6.ProductService.Web.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ui.mvc": {}
+      },
+      "contents": {
+        "mvcPages": {
+          "DemoTuan6.ProductService.Web.Pages.Products.Index.cshtml": {},
+          "DemoTuan6.ProductService.Web.Pages.Products.CreateModal.cshtml": {},
+          "DemoTuan6.ProductService.Web.Pages.Products.EditModal.cshtml": {}
+        }
+      }
+    },
+    "DemoTuan6.ProductService.Blazor": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.Blazor/DemoTuan6.ProductService.Blazor.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ui.blazor": {}
+      }
+    },
+    "DemoTuan6.ProductService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "src/DemoTuan6.ProductService.HttpApi.Host/DemoTuan6.ProductService.HttpApi.Host.csproj",
+      "folder": "src",
+      "includes": {
+        "host.http-api": {}
+      }
+    },
+    "DemoTuan6.ProductService.TestBase": {
+      "type": "dotnet-project",
+      "path": "test/DemoTuan6.ProductService.TestBase/DemoTuan6.ProductService.TestBase.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "DemoTuan6.ProductService.Domain.Tests": {
+      "type": "dotnet-project",
+      "path": "test/DemoTuan6.ProductService.Domain.Tests/DemoTuan6.ProductService.Domain.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "DemoTuan6.ProductService.EntityFrameworkCore.Tests": {
+      "type": "dotnet-project",
+      "path": "test/DemoTuan6.ProductService.EntityFrameworkCore.Tests/DemoTuan6.ProductService.EntityFrameworkCore.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "DemoTuan6.ProductService.Application.Tests": {
+      "type": "dotnet-project",
+      "path": "test/DemoTuan6.ProductService.Application.Tests/DemoTuan6.ProductService.Application.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    }
+  }
+}

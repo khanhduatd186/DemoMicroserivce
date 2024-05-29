@@ -1,0 +1,47 @@
+config:
+  selfUrl: # https://identity.demotuan6.dev
+  corsOrigins: # https://demotuan6-st-gateway-web,https://demotuan6-st-gateway-public-web
+  connectionStrings:
+    identityService: #
+    administrationService: #
+    saasService: #
+  authServer:
+    authority: # http://demotuan6-st-authserver
+    requireHttpsMetadata: # "false"
+    metadataAddress: # https://authserver.demotuan6.dev/.well-known/openid-configuration
+    swaggerClientId: WebGateway_Swagger
+  dotnetEnv: Staging
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+  AbpLicenseCode: #
+
+# Seeded applications and resources 
+openIdDict:
+  applications:
+    authServerRootUrl: #
+    angularRootUrl: #
+    webRootUrl: #
+    blazorRootUrl: #
+    blazorServerRootUrl: #
+    publicWebRootUrl: #
+    webGatewayRootUrl: #
+    publicWebGatewayRootUrl: #
+  resources:  
+    accountServiceRootUrl: #
+    administrationServiceRootUrl: #
+    identityServiceRootUrl: #
+    saasServiceRootUrl: #
+    productServiceRootUrl: #
+
+ingress:
+  host: identity.demotuan6.dev
+  tlsSecret: demotuan6-tls
+
+image:
+  repository: mycompanyname/demotuan6-service-identity
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

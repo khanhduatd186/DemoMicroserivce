@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DemoTuan6.ProductService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DemoTuan6.ProductService.Domain\DemoTuan6.ProductService.Domain.csproj" />
+    <ProjectReference Include="..\DemoTuan6.ProductService.TestBase\DemoTuan6.ProductService.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

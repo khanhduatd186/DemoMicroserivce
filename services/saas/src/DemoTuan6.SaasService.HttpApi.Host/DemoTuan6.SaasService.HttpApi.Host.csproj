@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>DemoTuan6.SaasService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\..\shared\DemoTuan6.Shared.Hosting.Microservices\DemoTuan6.Shared.Hosting.Microservices.csproj" />
+        <ProjectReference Include="..\DemoTuan6.SaasService.Application\DemoTuan6.SaasService.Application.csproj" />
+        <ProjectReference Include="..\DemoTuan6.SaasService.EntityFrameworkCore\DemoTuan6.SaasService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\DemoTuan6.SaasService.HttpApi\DemoTuan6.SaasService.HttpApi.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Logs\**" />
+        <Content Remove="Logs\**" />
+        <EmbeddedResource Remove="Logs\**" />
+        <None Remove="Logs\**" />
+    </ItemGroup>
+
+</Project>

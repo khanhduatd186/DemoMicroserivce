@@ -1,0 +1,66 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "DemoTuan6.ProductService.Domain.Shared": {
+      "path": "src/DemoTuan6.ProductService.Domain.Shared/DemoTuan6.ProductService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.Domain": {
+      "path": "src/DemoTuan6.ProductService.Domain/DemoTuan6.ProductService.Domain.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.Application.Contracts": {
+      "path": "src/DemoTuan6.ProductService.Application.Contracts/DemoTuan6.ProductService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.Application": {
+      "path": "src/DemoTuan6.ProductService.Application/DemoTuan6.ProductService.Application.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.EntityFrameworkCore": {
+      "path": "src/DemoTuan6.ProductService.EntityFrameworkCore/DemoTuan6.ProductService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.HttpApi": {
+      "path": "src/DemoTuan6.ProductService.HttpApi/DemoTuan6.ProductService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.HttpApi.Client": {
+      "path": "src/DemoTuan6.ProductService.HttpApi.Client/DemoTuan6.ProductService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.HttpApi.Host": {
+      "path": "src/DemoTuan6.ProductService.HttpApi.Host/DemoTuan6.ProductService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.Blazor": {
+      "path": "src/DemoTuan6.ProductService.Blazor/DemoTuan6.ProductService.Blazor.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.Web": {
+      "path": "src/DemoTuan6.ProductService.Web/DemoTuan6.ProductService.Web.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.ProductService.Application.Tests": {
+      "path": "test/DemoTuan6.ProductService.Application.Tests/DemoTuan6.ProductService.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.ProductService.Domain.Tests": {
+      "path": "test/DemoTuan6.ProductService.Domain.Tests/DemoTuan6.ProductService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.ProductService.EntityFrameworkCore.Tests": {
+      "path": "test/DemoTuan6.ProductService.EntityFrameworkCore.Tests/DemoTuan6.ProductService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.ProductService.TestBase": {
+      "path": "test/DemoTuan6.ProductService.TestBase/DemoTuan6.ProductService.TestBase.abppkg",
+      "folder": "test"
+    }
+  }
+}

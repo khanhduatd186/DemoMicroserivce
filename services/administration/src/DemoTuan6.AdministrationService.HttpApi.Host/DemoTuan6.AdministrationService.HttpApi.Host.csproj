@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>DemoTuan6.AdministrationService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Http.Client.IdentityModel.Web" Version="8.1.3" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="8.1.3" />
+        <PackageReference Include="Volo.Abp.Identity.Pro.HttpApi.Client" Version="8.1.3" />
+        <PackageReference Include="Volo.Abp.Account.Pro.Admin.Application.Contracts" Version="8.1.3" />
+        <PackageReference Include="Volo.Abp.Account.Pro.Public.Application.Contracts" Version="8.1.3" />
+        <PackageReference Include="Volo.Abp.OpenIddict.Pro.Domain.Shared" Version="8.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\..\shared\DemoTuan6.Shared.Localization\DemoTuan6.Shared.Localization.csproj" />
+        <ProjectReference Include="..\..\..\..\shared\DemoTuan6.Shared.Hosting.Microservices\DemoTuan6.Shared.Hosting.Microservices.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DemoTuan6.AdministrationService.Application\DemoTuan6.AdministrationService.Application.csproj" />
+        <ProjectReference Include="..\DemoTuan6.AdministrationService.EntityFrameworkCore\DemoTuan6.AdministrationService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\DemoTuan6.AdministrationService.HttpApi\DemoTuan6.AdministrationService.HttpApi.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Logs\**" />
+        <Content Remove="Logs\**" />
+        <EmbeddedResource Remove="Logs\**" />
+        <None Remove="Logs\**" />
+    </ItemGroup>
+
+</Project>

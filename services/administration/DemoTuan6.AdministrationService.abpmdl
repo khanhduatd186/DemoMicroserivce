@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "DemoTuan6.AdministrationService.HttpApi": {
+      "path": "src/DemoTuan6.AdministrationService.HttpApi/DemoTuan6.AdministrationService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.Application.Contracts": {
+      "path": "src/DemoTuan6.AdministrationService.Application.Contracts/DemoTuan6.AdministrationService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.Application": {
+      "path": "src/DemoTuan6.AdministrationService.Application/DemoTuan6.AdministrationService.Application.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.Domain.Shared": {
+      "path": "src/DemoTuan6.AdministrationService.Domain.Shared/DemoTuan6.AdministrationService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.Domain": {
+      "path": "src/DemoTuan6.AdministrationService.Domain/DemoTuan6.AdministrationService.Domain.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.EntityFrameworkCore": {
+      "path": "src/DemoTuan6.AdministrationService.EntityFrameworkCore/DemoTuan6.AdministrationService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.HttpApi.Client": {
+      "path": "src/DemoTuan6.AdministrationService.HttpApi.Client/DemoTuan6.AdministrationService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.HttpApi.Host": {
+      "path": "src/DemoTuan6.AdministrationService.HttpApi.Host/DemoTuan6.AdministrationService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.AdministrationService.TestBase": {
+      "path": "test/DemoTuan6.AdministrationService.TestBase/DemoTuan6.AdministrationService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.AdministrationService.Domain.Tests": {
+      "path": "test/DemoTuan6.AdministrationService.Domain.Tests/DemoTuan6.AdministrationService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.AdministrationService.EntityFrameworkCore.Tests": {
+      "path": "test/DemoTuan6.AdministrationService.EntityFrameworkCore.Tests/DemoTuan6.AdministrationService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.AdministrationService.Application.Tests": {
+      "path": "test/DemoTuan6.AdministrationService.Application.Tests/DemoTuan6.AdministrationService.Application.Tests.abppkg",
+      "folder": "test"
+    }
+  }
+}

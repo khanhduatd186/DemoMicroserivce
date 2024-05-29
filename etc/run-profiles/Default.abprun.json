@@ -1,0 +1,54 @@
+{
+  "applications": {
+    "Docker-Dependencies": {
+      "type": "cli",
+      "workingDirectory": "../docker",
+      "startCommand": "./up.ps1",
+      "stopCommand": "./down.ps1"
+    },
+    "DemoTuan6.AuthServer": {
+      "type": "dotnet-project",
+      "path": "../../apps/auth-server/src/DemoTuan6.AuthServer/DemoTuan6.AuthServer.csproj"
+    },
+    "DemoTuan6.Blazor": {
+      "type": "dotnet-project",
+      "path": "../../apps/blazor/src/DemoTuan6.Blazor/DemoTuan6.Blazor.csproj"
+    },
+    "DemoTuan6.Blazor.Server": {
+      "type": "dotnet-project",
+      "path": "../../apps/blazor/src/DemoTuan6.Blazor.Server/DemoTuan6.Blazor.Server.csproj"
+    },
+    "DemoTuan6.PublicWeb": {
+      "type": "dotnet-project",
+      "path": "../../apps/public-web/src/DemoTuan6.PublicWeb/DemoTuan6.PublicWeb.csproj"
+    },
+    "DemoTuan6.Web": {
+      "type": "dotnet-project",
+      "path": "../../apps/web/src/DemoTuan6.Web/DemoTuan6.Web.csproj"
+    },
+    "DemoTuan6.AdministrationService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/administration/src/DemoTuan6.AdministrationService.HttpApi.Host/DemoTuan6.AdministrationService.HttpApi.Host.csproj"
+    },
+    "DemoTuan6.IdentityService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/identity/src/DemoTuan6.IdentityService.HttpApi.Host/DemoTuan6.IdentityService.HttpApi.Host.csproj"
+    },
+    "DemoTuan6.ProductService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/product/src/DemoTuan6.ProductService.HttpApi.Host/DemoTuan6.ProductService.HttpApi.Host.csproj"
+    },
+    "DemoTuan6.SaasService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/saas/src/DemoTuan6.SaasService.HttpApi.Host/DemoTuan6.SaasService.HttpApi.Host.csproj"
+    },
+    "DemoTuan6.WebGateway": {
+      "type": "dotnet-project",
+      "path": "../../gateways/web/src/DemoTuan6.WebGateway/DemoTuan6.WebGateway.csproj"
+    },
+    "DemoTuan6.PublicWebGateway": {
+      "type": "dotnet-project",
+      "path": "../../gateways/web-public/src/DemoTuan6.PublicWebGateway/DemoTuan6.PublicWebGateway.csproj"
+    }
+  }
+}

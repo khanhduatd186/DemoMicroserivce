@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "DemoTuan6.IdentityService.HttpApi": {
+      "path": "src/DemoTuan6.IdentityService.HttpApi/DemoTuan6.IdentityService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.Application": {
+      "path": "src/DemoTuan6.IdentityService.Application/DemoTuan6.IdentityService.Application.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.Domain": {
+      "path": "src/DemoTuan6.IdentityService.Domain/DemoTuan6.IdentityService.Domain.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.Domain.Shared": {
+      "path": "src/DemoTuan6.IdentityService.Domain.Shared/DemoTuan6.IdentityService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.EntityFrameworkCore": {
+      "path": "src/DemoTuan6.IdentityService.EntityFrameworkCore/DemoTuan6.IdentityService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.HttpApi.Client": {
+      "path": "src/DemoTuan6.IdentityService.HttpApi.Client/DemoTuan6.IdentityService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.Application.Contracts": {
+      "path": "src/DemoTuan6.IdentityService.Application.Contracts/DemoTuan6.IdentityService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.HttpApi.Host": {
+      "path": "src/DemoTuan6.IdentityService.HttpApi.Host/DemoTuan6.IdentityService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "DemoTuan6.IdentityService.TestBase": {
+      "path": "test/DemoTuan6.IdentityService.TestBase/DemoTuan6.IdentityService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.IdentityService.Domain.Tests": {
+      "path": "test/DemoTuan6.IdentityService.Domain.Tests/DemoTuan6.IdentityService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.IdentityService.EntityFrameworkCore.Tests": {
+      "path": "test/DemoTuan6.IdentityService.EntityFrameworkCore.Tests/DemoTuan6.IdentityService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoTuan6.IdentityService.Application.Tests": {
+      "path": "test/DemoTuan6.IdentityService.Application.Tests/DemoTuan6.IdentityService.Application.Tests.abppkg",
+      "folder": "test"
+    }
+  }
+}

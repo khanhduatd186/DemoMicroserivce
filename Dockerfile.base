@@ -1,0 +1,31 @@
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS builder
+WORKDIR /src
+
+COPY "DemoTuan6.sln" "DemoTuan6.sln"
+
+# Applications
+COPY "apps/auth-server/src/DemoTuan6.AuthServer/DemoTuan6.AuthServer.csproj" "apps/auth-server/src/DemoTuan6.AuthServer/DemoTuan6.AuthServer.csproj"
+COPY "apps/public-web/src/DemoTuan6.PublicWeb/DemoTuan6.PublicWeb.csproj" "apps/public-web/src/DemoTuan6.PublicWeb/DemoTuan6.PublicWeb.csproj"
+COPY "apps/blazor/src/DemoTuan6.Blazor/DemoTuan6.Blazor.csproj" "apps/blazor/src/DemoTuan6.Blazor/DemoTuan6.Blazor.csproj"
+# Shared Projects
+COPY "shared/DemoTuan6.DbMigrator/DemoTuan6.DbMigrator.csproj" "shared/DemoTuan6.DbMigrator/DemoTuan6.DbMigrator.csproj"
+COPY "shared/DemoTuan6.Shared.Hosting/DemoTuan6.Shared.Hosting.csproj" "shared/DemoTuan6.Shared.Hosting/DemoTuan6.Shared.Hosting.csproj"
+COPY "shared/DemoTuan6.Shared.Hosting.Gateways/DemoTuan6.Shared.Hosting.Gateways.csproj" "shared/DemoTuan6.Shared.Hosting.Gateways/DemoTuan6.Shared.Hosting.Gateways.csproj"
+COPY "shared/DemoTuan6.Shared.Hosting.Microservices/DemoTuan6.Shared.Hosting.Microservices.csproj" "shared/DemoTuan6.Shared.Hosting.Microservices/DemoTuan6.Shared.Hosting.Microservices.csproj"
+COPY "shared/DemoTuan6.Shared.Hosting.AspNetCore/DemoTuan6.Shared.Hosting.AspNetCore.csproj" "shared/DemoTuan6.Shared.Hosting.AspNetCore/DemoTuan6.Shared.Hosting.AspNetCore.csproj"
+COPY "shared/DemoTuan6.Shared.Hosting/DemoTuan6.Shared.Hosting.csproj" "shared/DemoTuan6.Shared.Hosting/DemoTuan6.Shared.Hosting.csproj"
+COPY "shared/DemoTuan6.Shared.Localization/DemoTuan6.Shared.Localization.csproj" "shared/DemoTuan6.Shared.Localization/DemoTuan6.Shared.Localization.csproj"
+
+# Microservices
+COPY "services/administration/src/DemoTuan6.AdministrationService.HttpApi.Host/DemoTuan6.AdministrationService.HttpApi.Host.csproj" "services/administration/src/DemoTuan6.AdministrationService.HttpApi.Host/DemoTuan6.AdministrationService.HttpApi.Host.csproj"
+COPY "services/identity/src/DemoTuan6.IdentityService.HttpApi.Host/DemoTuan6.IdentityService.HttpApi.Host.csproj" "services/identity/src/DemoTuan6.IdentityService.HttpApi.Host/DemoTuan6.IdentityService.HttpApi.Host.csproj"
+COPY "services/saas/src/DemoTuan6.SaasService.HttpApi.Host/DemoTuan6.SaasService.HttpApi.Host.csproj" "services/saas/src/DemoTuan6.SaasService.HttpApi.Host/DemoTuan6.SaasService.HttpApi.Host.csproj"
+COPY "services/product/src/DemoTuan6.ProductService.HttpApi.Host/DemoTuan6.ProductService.HttpApi.Host.csproj" "services/product/src/DemoTuan6.ProductService.HttpApi.Host/DemoTuan6.ProductService.HttpApi.Host.csproj"
+# Gateways
+COPY "gateways/web/src/DemoTuan6.WebGateway/DemoTuan6.WebGateway.csproj" "gateways/web/src/DemoTuan6.WebGateway/DemoTuan6.WebGateway.csproj"
+COPY "gateways/web-public/src/DemoTuan6.PublicWebGateway/DemoTuan6.PublicWebGateway.csproj" "gateways/web-public/src/DemoTuan6.PublicWebGateway/DemoTuan6.PublicWebGateway.csproj"
+
+COPY "NuGet.Config" "NuGet.Config"
+
+RUN dotnet restore "DemoTuan6.sln"

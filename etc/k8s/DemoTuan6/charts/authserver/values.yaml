@@ -1,0 +1,33 @@
+config:
+  selfUrl: # https://authserver.demotuan6.dev
+  corsOrigins: #
+  allowedRedirectUrls: #
+  disablePii: #
+  identityService:
+    connString: # 
+  administrationService:
+    connString: # 
+  saasService:
+    connString: #     
+  authServer:
+    authority: #
+    requireHttpsMetadata: #
+    swaggerClientId: #
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+  AbpLicenseCode: #
+
+ingress:
+  host: authserver.demotuan6.dev
+  tlsSecret: demotuan6-tls
+
+image:
+  repository: mycompanyname/demotuan6-app-authserver
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}
+    

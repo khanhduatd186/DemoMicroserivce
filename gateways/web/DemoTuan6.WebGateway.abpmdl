@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "DemoTuan6.WebGateway": {
+      "path": "src/DemoTuan6.WebGateway/DemoTuan6.WebGateway.abppkg",
+      "folder": "src"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "folders": {
+    "items": {
+      "apps": {},
+      "gateways": {},
+      "services": {}
+    }
+  },
+  "modules": {
+    "DemoTuan6": {
+      "path": "DemoTuan6.abpmdl"
+    },
+    "DemoTuan6.AuthServer": {
+      "path": "apps/auth-server/DemoTuan6.AuthServer.abpmdl",
+      "folder": "apps"
+    },
+    "DemoTuan6.Blazor": {
+      "path": "apps/blazor/DemoTuan6.Blazor.abpmdl",
+      "folder": "apps"
+    },
+    "DemoTuan6.PublicWeb": {
+      "path": "apps/public-web/DemoTuan6.PublicWeb.abpmdl",
+      "folder": "apps"
+    },
+    "DemoTuan6.Web": {
+      "path": "apps/web/DemoTuan6.Web.abpmdl",
+      "folder": "apps"
+    },
+    "DemoTuan6.WebGateway": {
+      "path": "gateways/web/DemoTuan6.WebGateway.abpmdl",
+      "folder": "gateways"
+    },
+    "DemoTuan6.PublicWebGateway": {
+      "path": "gateways/web-public/DemoTuan6.PublicWebGateway.abpmdl",
+      "folder": "gateways"
+    },
+    "DemoTuan6.AdministrationService": {
+      "path": "services/administration/DemoTuan6.AdministrationService.abpmdl",
+      "folder": "services"
+    },
+    "DemoTuan6.IdentityService": {
+      "path": "services/identity/DemoTuan6.IdentityService.abpmdl",
+      "folder": "services"
+    },
+    "DemoTuan6.ProductService": {
+      "path": "services/product/DemoTuan6.ProductService.abpmdl",
+      "folder": "services"
+    },
+    "DemoTuan6.SaasService": {
+      "path": "services/saas/DemoTuan6.SaasService.abpmdl",
+      "folder": "services"
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/run-profiles/Default.abprun.json"
+    }
+  }
+}

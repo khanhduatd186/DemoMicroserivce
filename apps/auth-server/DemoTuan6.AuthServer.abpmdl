@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "DemoTuan6.AuthServer": {
+      "path": "src/DemoTuan6.AuthServer/DemoTuan6.AuthServer.abppkg",
+      "folder": "src"
+    }
+  }
+}

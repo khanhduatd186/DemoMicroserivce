@@ -1,0 +1,364 @@
+# auth-server sub-chart override
+authserver:
+  config:
+    selfUrl: https://authserver.demotuan6.dev
+    corsOrigins: https://angular.demotuan6.dev,https://blazor.demotuan6.dev,https://gateway-web.demotuan6.dev,https://gateway-public.demotuan6.dev,https://identity.demotuan6.dev,https://administration.demotuan6.dev,https://saas.demotuan6.dev,https://product.demotuan6.dev
+    allowedRedirectUrls: https://angular.demotuan6.dev,http://angular.demotuan6.dev,https://blazor.demotuan6.dev,http://blazor.demotuan6.dev,https://blazor.demotuan6.dev,https://blazor-server.demotuan6.dev,https://web.demotuan6.dev
+    disablePii: "false"
+    identityService:
+      connString: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    administrationService:
+      connString: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    saasService:
+      connString: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: https://authserver.demotuan6.dev
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  ingress:
+    host: authserver.demotuan6.dev
+  image:
+    repository: mycompanyname/demotuan6-app-authserver
+    tag: latest
+
+# identity-service sub-chart override
+identity:
+  config:
+    selfUrl: https://identity.demotuan6.dev
+    corsOrigins: https://gateway-web.demotuan6.dev
+    connectionStrings:
+      identityService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://demotuan6-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.demotuan6.dev
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  openIdDict: #Seed applications and resources
+    applications:
+      authServerRootUrl: https://authserver.demotuan6.dev
+      angularRootUrl: https://angular.demotuan6.dev
+      webRootUrl: https://web.demotuan6.dev
+      blazorRootUrl: https://blazor.demotuan6.dev
+      blazorServerRootUrl: https://blazor-server.demotuan6.dev
+      publicWebRootUrl: https://demotuan6.dev
+      webGatewayRootUrl: https://gateway-web.demotuan6.dev
+      publicWebGatewayRootUrl: https://gateway-public.demotuan6.dev
+    resources:  
+      accountServiceRootUrl: https://authserver.demotuan6.dev
+      administrationServiceRootUrl: https://administration.demotuan6.dev
+      identityServiceRootUrl: https://identity.demotuan6.dev
+      saasServiceRootUrl: https://saas.demotuan6.dev
+      productServiceRootUrl: https://product.demotuan6.dev
+  ingress:
+    host: identity.demotuan6.dev
+  image:
+    repository: mycompanyname/demotuan6-service-identity
+    tag: latest
+
+# administration-service sub-chart override
+administration:
+  config:
+    selfUrl: https://administration.demotuan6.dev
+    corsOrigins: https://gateway-web.demotuan6.dev,https://gateway-public.demotuan6.dev
+    connectionStrings:
+      administrationService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"    
+    authServer:
+      authority: http://demotuan6-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.demotuan6.dev
+      swaggerClientId: WebGateway_Swagger
+    remoteServices:
+      abpIdentityBaseUrl: http://demotuan6-st-identity
+      useCurrentToken: "false"   
+    dotnetEnv: Staging
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  synchedCommunication: # Used for server-to-server (client-credentials) communication with identityService for user permissions
+    authority: http://demotuan6-st-authserver
+    requireHttps: "false"
+    validateIssuerName: "false"
+    validateEndpoints: "false"
+  ingress:
+    host: administration.demotuan6.dev
+  image:
+    repository: mycompanyname/demotuan6-service-administration
+    tag: latest
+
+# saas-service sub-chart override
+saas:
+  config:
+    selfUrl: https://saas.demotuan6.dev
+    corsOrigins: https://gateway-web.demotuan6.dev
+    connectionStrings:
+      administrationService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://demotuan6-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.demotuan6.dev
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  ingress:
+    host: saas.demotuan6.dev
+  image:
+    repository: mycompanyname/demotuan6-service-saas
+    tag: latest  
+
+# product-service sub-chart override
+product:
+  config:
+    selfUrl: https://product.demotuan6.dev
+    corsOrigins: https://gateway-web.demotuan6.dev,https://gateway-public.demotuan6.dev
+    connectionStrings:
+      productService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_ProductService;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://demotuan6-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.demotuan6.dev
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  ingress:
+    host: product.demotuan6.dev
+  image:
+    repository: mycompanyname/demotuan6-service-product
+    tag: latest
+
+# gateway-web sub-chart override
+gateway-web:
+  config:
+    selfUrl: https://gateway-web.demotuan6.dev
+    corsOrigins: https://angular.demotuan6.dev,https://blazor.demotuan6.dev
+    authServer:
+      authority: http://demotuan6-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.demotuan6.dev
+      swaggerClientId: WebGateway_Swagger      
+    dotnetEnv: Staging
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  reRoutes:
+    accountService:
+      url: http://demotuan6-st-authserver
+    saasService:
+      url: http://demotuan6-st-saas
+    administrationService:
+      url: http://demotuan6-st-administration
+    identityService:
+      url: http://demotuan6-st-identity
+    productService:
+      url: http://demotuan6-st-product
+  ingress:
+    host: gateway-web.demotuan6.dev
+  image:
+    repository: mycompanyname/demotuan6-gateway-web
+    tag: latest
+    pullPolicy: IfNotPresent
+
+# gateway-web-public sub-chart override
+gateway-web-public:
+  config:
+    selfUrl: https://gateway-public.demotuan6.dev
+    authServer:
+      authority: http://demotuan6-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.demotuan6.dev
+      swaggerClientId: WebGateway_Swagger      
+    dotnetEnv: Staging 
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  reRoutes:
+    accountService:
+      url: http://demotuan6-st-authserver
+    saasService:
+      url: http://demotuan6-st-saas
+    administrationService:
+      url: http://demotuan6-st-administration
+    productService:
+      url: http://demotuan6-st-product  
+  ingress:
+    host: gateway-public.demotuan6.dev
+    tlsSecret: demotuan6-tls
+  image:
+    repository: mycompanyname/demotuan6-gateway-web-public
+    tag: latest
+    pullPolicy: IfNotPresent
+
+kibana:
+  config:
+    elasticsearchUrl: http://demotuan6-st-elasticsearch:9200
+  ingress:
+    host: kibana.demotuan6.dev
+    tlsSecret: demotuan6-tls
+
+# dbmigrator sub-chart override
+dbmigrator:
+  config:
+    connectionStrings:
+      identityService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      productService: "Server=demotuan6-st-sqldb,1433;Database=DemoTuan6_ProductService;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    dotnetEnv: Staging
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+    redisHost: demotuan6-st-redis
+  openIdDict:
+    applications:
+      authServerRootUrl: https://authserver.demotuan6.dev
+      angularRootUrl: https://angular.demotuan6.dev
+      webRootUrl: https://web.demotuan6.dev
+      blazorRootUrl: https://blazor.demotuan6.dev
+      blazorServerRootUrl: https://blazor-server.demotuan6.dev
+      publicWebRootUrl: https://demotuan6.dev
+      webGatewayRootUrl: https://gateway-web.demotuan6.dev
+      publicWebGatewayRootUrl: https://gateway-public.demotuan6.dev
+    resources:  
+      accountServiceRootUrl: https://authserver.demotuan6.dev
+      administrationServiceRootUrl: https://administration.demotuan6.dev
+      identityServiceRootUrl: https://identity.demotuan6.dev
+      saasServiceRootUrl: https://saas.demotuan6.dev
+      productServiceRootUrl: https://product.demotuan6.dev
+  image:
+    repository: mycompanyname/demotuan6-db-migrator
+    tag: latest
+    pullPolicy: IfNotPresent  
+
+# Public Web application sub-chart override
+publicweb:
+  config:
+    selfUrl: https://demotuan6.dev
+    gatewayUrl: http://demotuan6-st-gateway-web-public
+    authServer:
+      authority: https://authserver.demotuan6.dev # should be domain on production (https://auth.mydomain.com)
+      requireHttpsMetadata: "false"
+      isOnK8s: "true"
+      metaAddress: http://demotuan6-st-authserver # should be container on production (http://demotuan6-az-authserver)
+    dotnetEnv: Staging 
+    redisHost: demotuan6-st-redis
+    rabbitmqHost: demotuan6-st-rabbitmq
+    elasticsearchUrl: http://demotuan6-st-elasticsearch
+  ingress:
+    host: demotuan6.dev
+    tlsSecret: demotuan6-tls
+  image:
+    repository: mycompanyname/demotuan6-app-public-web
+    tag: latest
+    pullPolicy: IfNotPresent
+blazor:
+  config:
+    selfUrl: https://blazor.demotuan6.dev
+    gatewayUrl: https://gateway-web.demotuan6.dev
+    authServer:
+      authority: https://authserver.demotuan6.dev
+      requireHttpsMetadata: "false"
+      responseType: "code"
+  ingress:
+    host: blazor.demotuan6.dev
+    tlsSecret: demotuan6-tls
+  image:
+    repository: mycompanyname/demotuan6-app-blazor
+    tag: latest
+    pullPolicy: IfNotPresent
+# Default values for DemoTuan6.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DemoTuan6.AdministrationService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DemoTuan6.AdministrationService.Domain\DemoTuan6.AdministrationService.Domain.csproj" />
+    <ProjectReference Include="..\DemoTuan6.AdministrationService.TestBase\DemoTuan6.AdministrationService.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

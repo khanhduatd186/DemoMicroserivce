@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "DemoTuan6.Blazor": {
+      "path": "src/DemoTuan6.Blazor/DemoTuan6.Blazor.abppkg",
+      "folder": "src"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <RootNamespace>DemoTuan6.SaasService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Saas.Host.HttpApi.Client" Version="8.1.3" />
+        <PackageReference Include="Volo.Saas.Tenant.HttpApi.Client" Version="8.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DemoTuan6.SaasService.Application.Contracts\DemoTuan6.SaasService.Application.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>
